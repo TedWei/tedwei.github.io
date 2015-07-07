@@ -3,17 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | wei&#39;s blog</title>
+  <title>count-change | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/archives/2015/index.html">
+  <meta name="description" content="count changescheme
+(define (count-change amount)
+    (cc amount 5))
+(define (cc amount kinds-of-coins)
+    (cond ((= amount 0) 1)
+          ((or (&amp;lt; amount 0) (= kinds-of-coins 0)) 0)
+          (els">
+<meta property="og:type" content="article">
+<meta property="og:title" content="count-change">
+<meta property="og:url" content="http://tedwei.github.io/2015/07/07/count-change/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="count changescheme
+(define (count-change amount)
+    (cc amount 5))
+(define (cc amount kinds-of-coins)
+    (cond ((= amount 0) 1)
+          ((or (&amp;lt; amount 0) (= kinds-of-coins 0)) 0)
+          (els">
+<meta property="og:updated_time" content="2015-07-07T16:04:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="count-change">
+<meta name="twitter:description" content="count changescheme
+(define (count-change amount)
+    (cc amount 5))
+(define (cc amount kinds-of-coins)
+    (cond ((= amount 0) 1)
+          ((or (&amp;lt; amount 0) (= kinds-of-coins 0)) 0)
+          (els">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,215 +100,82 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2015</h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-count-change" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      count-change
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/07/count-change/" class="title">count-change</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        count changescheme
-(define (count-change amount)
-    (cc amount 5))
-(define (cc amount kinds-of-coins)
-    (cond ((= amount 0) 1)
-          ((or (&lt; amount 0) (= kinds-of-coins 0)) 0)
-          (els
-      </p>
-    </div>
-  </article>
 
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
+        </header>
       
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-06T16:16:38.000Z" itemprop="datePublished">2015-07-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/07/ackermann-And-Fibonacci-JavascriptWithSICP/" class="title">ackermann And Fibonacci (JavascriptWithSICP)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        ackerman in scheme and javascriptscheme
-//scheme edition
-(define (A x y)
-  (cond ((= y 0) 0)
-        ((= x 0) (* 2 y))
-        ((= y 1) 2)
-        (else (A (- x 1)
-                 (A x (- y 1))))))
-j
+      <p class="article-byline">
+        <a href="/2015/07/07/count-change/" class="article-date">
+  <time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time>
+</a>
       </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T16:11:10.000Z" itemprop="datePublished">2015-07-05</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/05/javascript-the-good-parts/" class="title">javascript the good parts</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        读书笔记—javascript the good parts为 Function 添加 method 
-Function.prototype.method = function(name,func){
-    if (!this.prototype[name]){
-        this.prototype[name] = func;
+      <div class="article-entry" itemprop="articleBody">
+        <p>count change<br>scheme</p>
+<pre><code><span class="list">(<span class="keyword"><span class="built_in">define</span></span> <span class="list">(<span class="keyword">count-change</span> amount)</span>
+    <span class="list">(<span class="keyword">cc</span> amount <span class="number">5</span>)</span>)</span>
+<span class="list">(<span class="keyword"><span class="built_in">define</span></span> <span class="list">(<span class="keyword">cc</span> amount kinds-of-coins)</span>
+    <span class="list">(<span class="keyword"><span class="built_in">cond</span></span> <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> amount <span class="number">0</span>)</span> <span class="number">1</span>)</span>
+          <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">or</span></span> <span class="list">(<span class="keyword"><span class="built_in">&lt;</span></span> amount <span class="number">0</span>)</span> <span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">0</span>)</span>)</span> <span class="number">0</span>)</span>
+          <span class="list">(<span class="keyword"><span class="built_in">else</span></span> <span class="list">(<span class="keyword"><span class="built_in">+</span></span> <span class="list">(<span class="keyword">cc</span> amount <span class="list">(<span class="keyword"><span class="built_in">-</span></span> kinds-of-coins <span class="number">1</span>)</span>)</span>
+                 <span class="list">(<span class="keyword">cc</span> <span class="list">(<span class="keyword"><span class="built_in">-</span></span> amount <span class="list">(<span class="keyword">first-denomination</span> kinds-of-coins)</span>)</span> kinds-of-coins)</span>)</span>)</span>)</span>)</span>
+<span class="list">(<span class="keyword"><span class="built_in">define</span></span> <span class="list">(<span class="keyword">first-denomination</span> kinds-of-coins)</span>
+    <span class="list">(<span class="keyword"><span class="built_in">cond</span></span> <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">1</span>)</span> <span class="number">1</span>)</span>
+          <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">2</span>)</span> <span class="number">5</span>)</span>
+          <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">3</span>)</span> <span class="number">10</span>)</span>
+          <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">4</span>)</span> <span class="number">25</span>)</span>
+          <span class="list">(<span class="list">(<span class="keyword"><span class="built_in">=</span></span> kinds-of-coins <span class="number">5</span>)</span> <span class="number">50</span>)</span>)</span>)</span>
+</code></pre><p>javascript</p>
+<pre><code><span class="keyword">var</span> countChange = <span class="function"><span class="keyword">function</span><span class="params">(amount)</span></span>{
+    <span class="keyword">var</span> cc = <span class="function"><span class="keyword">function</span><span class="params">(amount,kindsOfCoins)</span></span>{
+        <span class="keyword">if</span> (amount === <span class="number">0</span>){
+            <span class="keyword">return</span> <span class="number">1</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span> (amount &lt; <span class="number">0</span> || kindsOfCoins === <span class="number">0</span>){
+            <span class="keyword">return</span> <span class="number">0</span>;
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> cc(amount,kindsOfCoins-<span class="number">1</span>)+cc((amount-firstDenomination(kindsOfCoins)),kindsOfCoins);
+        }
     }
+    <span class="keyword">var</span> firstDenomination = <span class="function"><span class="keyword">function</span><span class="params">(kindsOfCoins)</span></span>{
+        <span class="keyword">if</span> (kindsOfCoins === <span class="number">1</span>){
+            <span class="keyword">return</span> <span class="number">1</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span> (kindsOfCoins === <span class="number">2</span>){
+            <span class="keyword">return</span> <span class="number">5</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span> (kindsOfCoins === <span class="number">3</span>){
+            <span class="keyword">return</span> <span class="number">10</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span> (kindsOfCoins === <span class="number">4</span>){
+            <span class="keyword">return</span> <span class="number">25</span>;
+        }<span class="keyword">else</span> <span class="keyword">if</span> (kindsOfCoins === <span class="number">5</span>){
+            <span class="keyword">return</span> <span class="number">50</span>;
+        }
+    }
+    <span class="keyword">return</span> cc(amount,<span class="number">5</span>);
 }
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/07/07/count-change/" data-id="cibthpxcl000m3xw27r79ixqv" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SICP/">SICP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scheme/">scheme</a></li></ul>
 
-//can use this to del
-      </p>
+      </footer>
     </div>
   </article>
-
-    
   
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:37:51.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/DOM/" class="title">window.screen (MDN)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        原文链接为 https://developer.mozilla.org/en-US/docs/Web/API/Screen
-window.screen是跟设备界面相关的属性与方法
-有以下属性 
-availHeight可用的尺寸高度 单位为像素会去除掉不可用的部分高度 例如菜单栏
-availLeft距离屏幕左侧的距离 
-availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为23)
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:29:48.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/javascript-love-with-SICP/" class="title">javascript love with SICP</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        最近在学习 SICP 。准备用 scheme 和 javascript 都实现一份书中的代码今天贴两段关于计算阶乘的线性的递归和迭代
-线性递归scheme:  
-(define (factorial n) 
-      (if (= n 1)
-           1
-           (* n (factorial (- n 1)))))
-javascript:  
-var factoria
-      </p>
-    </div>
-  </article>
-
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-03T02:44:53.000Z" itemprop="datePublished">2015-07-03</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/03/hello-world/" class="title">Hello World</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -303,6 +189,19 @@ Quick
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/07/ackermann-And-Fibonacci-JavascriptWithSICP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">ackermann And Fibonacci (JavascriptWithSICP)</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     

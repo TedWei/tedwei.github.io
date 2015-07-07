@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: sicp | wei&#39;s blog</title>
+  <title>Tag: SICP | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/sicp/index.html">
+<meta property="og:url" content="http://tedwei.github.io/tags/SICP/index.html">
 <meta property="og:site_name" content="wei's blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -49,10 +49,10 @@
     <div class="container">
       <div class="container-inner">
         <div id="header-title">
-          <h1 class="logo-wrap">
-            <a href="/" class="logo"></a>
-          </h1>
-          
+          <!-- <h1 class="logo-wrap"> -->
+            <!-- <a href="/" class="logo"></a> -->
+          <!-- </h1> -->
+          <!--  -->
         </div>
         <div id="header-inner" class="nav-container">
           <a id="main-nav-toggle" class="nav-icon"></a>
@@ -81,7 +81,7 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>sicp</em></h1>
+              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>SICP</em></h1>
             </div>
             <div class="main-body-content">
               
@@ -107,53 +107,20 @@
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-07-06T16:16:38.000Z" itemprop="datePublished">2015-07-07</time></p>
+        <p class="date"><time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/07/07/ackermann-And-Fibonacci-JavascriptWithSICP/" class="title">ackermann And Fibonacci (JavascriptWithSICP)</a>
+        <a href="/2015/07/07/count-change/" class="title">count-change</a>
       </h2>
       <p class="article-excerpt">
         
-        ackerman in scheme and javascriptscheme
-//scheme edition
-(define (A x y)
-  (cond ((= y 0) 0)
-        ((= x 0) (* 2 y))
-        ((= y 1) 2)
-        (else (A (- x 1)
-                 (A x (- y 1))))))
-j
-      </p>
-    </div>
-  </article>
-
-    
-  
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:29:48.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/javascript-love-with-SICP/" class="title">javascript love with SICP</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        最近在学习 SICP 。准备用 scheme 和 javascript 都实现一份书中的代码今天贴两段关于计算阶乘的线性的递归和迭代
-线性递归scheme:  
-(define (factorial n) 
-      (if (= n 1)
-           1
-           (* n (factorial (- n 1)))))
-javascript:  
-var factoria
+        count changescheme
+(define (count-change amount)
+    (cc amount 5))
+(define (cc amount kinds-of-coins)
+    (cond ((= amount 0) 1)
+          ((or (&lt; amount 0) (= kinds-of-coins 0)) 0)
+          (els
       </p>
     </div>
   </article>
@@ -193,6 +160,15 @@ var factoria
             
             <div class="item-inner">
               <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/07/07/count-change/" class="title">count-change</a></p>
+              <p class="item-date"><time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
               <p class="item-title"><a href="/2015/07/07/ackermann-And-Fibonacci-JavascriptWithSICP/" class="title">ackermann And Fibonacci (JavascriptWithSICP)</a></p>
               <p class="item-date"><time datetime="2015-07-06T16:16:38.000Z" itemprop="datePublished">2015-07-07</time></p>
             </div>
@@ -225,15 +201,6 @@ var factoria
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/07/03/hello-world/" class="title">Hello World</a></p>
-              <p class="item-date"><time datetime="2015-07-03T02:44:53.000Z" itemprop="datePublished">2015-07-03</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -246,7 +213,7 @@ var factoria
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -256,7 +223,7 @@ var factoria
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDN/">MDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/">hanoi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scheme/">scheme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screen/">screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sicp/">sicp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/window/">window</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDN/">MDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SICP/">SICP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/">hanoi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scheme/">scheme</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screen/">screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sicp/">sicp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/window/">window</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -266,7 +233,7 @@ var factoria
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MDN/" style="font-size: 10px;">MDN</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/scheme/" style="font-size: 15px;">scheme</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/sicp/" style="font-size: 15px;">sicp</a> <a href="/tags/window/" style="font-size: 10px;">window</a>
+      <a href="/tags/MDN/" style="font-size: 10px;">MDN</a> <a href="/tags/SICP/" style="font-size: 10px;">SICP</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/scheme/" style="font-size: 16.67px;">scheme</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/sicp/" style="font-size: 13.33px;">sicp</a> <a href="/tags/window/" style="font-size: 10px;">window</a>
     </div>
   </div>
 
