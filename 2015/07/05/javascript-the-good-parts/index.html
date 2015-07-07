@@ -25,7 +25,7 @@ Function.prototype.method = function(name,func){
 }
 
 //can use this to del">
-<meta property="og:updated_time" content="2015-07-04T17:11:52.000Z">
+<meta property="og:updated_time" content="2015-07-07T03:53:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript the good parts">
 <meta name="twitter:description" content="读书笔记—javascript the good parts为 Function 添加 method 
@@ -164,24 +164,31 @@ hanoi(<span class="number">3</span>,<span class="string">'Src'</span>,<span clas
     <span class="keyword">if</span> (!nodes){
         <span class="keyword">var</span> nodes = [];
     }
-    <span class="keyword">if</span> (node == <span class="literal">null</span>){
-        <span class="keyword">return</span> 
-    }
-    node = node.firstChild;
+    <span class="keyword">var</span> walkIter = <span class="function"><span class="keyword">function</span><span class="params">(node)</span></span>{
+        <span class="keyword">if</span> (node == <span class="literal">null</span>){
+            <span class="keyword">return</span> 
+        }
+        node = node.firstChild;
 
-    <span class="keyword">while</span>(node){
-        nodes.push(node);
-        walk(node);
-        node = node.nextSibling;
+        <span class="keyword">while</span>(node){
+            nodes.push(node);
+            walkIter(node);
+            node = node.nextSibling;
+        }
+        <span class="keyword">return</span> nodes;
     }
-    <span class="keyword">return</span> nodes;
+
+    <span class="keyword">return</span> walkIter(node);
+
 }
 </code></pre>
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/07/05/javascript-the-good-parts/" data-id="cibsrznbf0003abw2aa2x2a2y" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/07/05/javascript-the-good-parts/" data-id="cibss9z7s0003i8w2qs9qyk8r" class="article-share-link">分享到</a>
         
         
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hanoi/">hanoi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
       </footer>
     </div>
   </article>
@@ -195,17 +202,7 @@ hanoi(<span class="number">3</span>,<span class="string">'Src'</span>,<span clas
     <p>关注我 :</p>
     <ul class="social-links">
       
-        <li><a class="social-tooltip" title="twitter" href="/" target="_blank"><i id="icon-twitter" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="facebook" href="/" target="_blank"><i id="icon-facebook" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="google_plus" href="/" target="_blank"><i id="icon-google_plus" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank"><i id="icon-github" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="weibo" href="/" target="_blank"><i id="icon-weibo" class="icon"></i></a></li>
-      
-        <li><a class="social-tooltip" title="rss" href="/" target="_blank"><i id="icon-rss" class="icon"></i></a></li>
+        <li><a class="social-tooltip" title="github" href="https://github.com/TedWei" target="_blank"><i id="icon-github" class="icon"></i></a></li>
       
     </ul>
   </div>
@@ -308,7 +305,7 @@ hanoi(<span class="number">3</span>,<span class="string">'Src'</span>,<span clas
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVASCRIPT-SICP-SCHEME/">JAVASCRIPT SICP SCHEME</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-SICP-scheme/">javascript SICP scheme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-window-screen-MDN/">javascript window screen MDN</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDN/">MDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/">hanoi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scheme/">scheme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screen/">screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sicp/">sicp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/window/">window</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -318,7 +315,7 @@ hanoi(<span class="number">3</span>,<span class="string">'Src'</span>,<span clas
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JAVASCRIPT-SICP-SCHEME/" style="font-size: 10px;">JAVASCRIPT SICP SCHEME</a> <a href="/tags/javascript-SICP-scheme/" style="font-size: 10px;">javascript SICP scheme</a> <a href="/tags/javascript-window-screen-MDN/" style="font-size: 10px;">javascript window screen MDN</a>
+      <a href="/tags/MDN/" style="font-size: 10px;">MDN</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/scheme/" style="font-size: 15px;">scheme</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/sicp/" style="font-size: 15px;">sicp</a> <a href="/tags/window/" style="font-size: 10px;">window</a>
     </div>
   </div>
 
