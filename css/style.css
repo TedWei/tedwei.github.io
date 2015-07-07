@@ -568,7 +568,7 @@ body {
   padding: 3px 0;
 }
 #sidebar .sidebar-top .social-links {
-  float: right;
+  float: left;
   position: relative;
   padding-top: 2px;
 }
@@ -1860,6 +1860,7 @@ i.icon:before {
   .main-body-inner #sidebar .sidebar-top {
     padding: 10px 30px;
     background: none;
+    display: none;
     border-bottom: 1px solid #ddd;
   }
   .main-body-inner #sidebar .sidebar-top p,
