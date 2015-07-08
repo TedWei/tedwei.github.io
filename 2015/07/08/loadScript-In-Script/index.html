@@ -25,7 +25,7 @@
 //    })
 //  or multiple
 //  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
-<meta property="og:updated_time" content="2015-07-08T02:35:24.000Z">
+<meta property="og:updated_time" content="2015-07-08T02:50:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="loadScript In Script">
 <meta name="twitter:description" content="简易的延迟加载方法
@@ -160,7 +160,7 @@
         newScript.src = url;
         <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(newScript);
     };
-    <span class="keyword">if</span> (script.length){
+    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(script)){
         (<span class="function"><span class="keyword">function</span> <span class="title">loadSIter</span>(<span class="params"></span>)</span>{
             loadS(script[<span class="number">0</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
                 script.shift();
@@ -178,7 +178,7 @@
 </code></pre>
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/07/08/loadScript-In-Script/" data-id="cibu5lbck00092jw2izpw3k2i" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/07/08/loadScript-In-Script/" data-id="cibu64esm0009dyw2bkdbehy1" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lazyLoad/">lazyLoad</a></li></ul>
