@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: MDN | wei&#39;s blog</title>
+  <title>loadScript In Script | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/MDN/index.html">
+  <meta name="description" content="简易的延迟加载方法
+//  support multiple script loading
+//  example 
+//  loadScript(&apos;jQuery.js&apos;,function(){
+//       /*do something in here*/
+//    })
+//  or multiple
+//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="loadScript In Script">
+<meta property="og:url" content="http://tedwei.github.io/2015/07/08/loadScript-In-Script/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="简易的延迟加载方法
+//  support multiple script loading
+//  example 
+//  loadScript(&apos;jQuery.js&apos;,function(){
+//       /*do something in here*/
+//    })
+//  or multiple
+//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
+<meta property="og:updated_time" content="2015-07-08T02:35:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="loadScript In Script">
+<meta name="twitter:description" content="简易的延迟加载方法
+//  support multiple script loading
+//  example 
+//  loadScript(&apos;jQuery.js&apos;,function(){
+//       /*do something in here*/
+//    })
+//  or multiple
+//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,58 +103,90 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>MDN</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-loadScript-In-Script" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      loadScript In Script
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:37:51.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/DOM/" class="title">window.screen (MDN)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        原文链接为 https://developer.mozilla.org/en-US/docs/Web/API/Screen
-window.screen是跟设备界面相关的属性与方法
-有以下属性 
-availHeight可用的尺寸高度 单位为像素会去除掉不可用的部分高度 例如菜单栏
-availLeft距离屏幕左侧的距离 
-availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为23)
+      <p class="article-byline">
+        <a href="/2015/07/08/loadScript-In-Script/" class="article-date">
+  <time datetime="2015-07-08T01:19:33.000Z" itemprop="datePublished">2015-07-08</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>简易的延迟加载方法</p>
+<pre><code><span class="comment">//  support multiple script loading</span>
+<span class="comment">//  example </span>
+<span class="comment">//  loadScript('jQuery.js',function(){</span>
+<span class="comment">//       /*do something in here*/</span>
+<span class="comment">//    })</span>
+<span class="comment">//  or multiple</span>
+<span class="comment">//  loadScript(['jQuery.js','bootstrap.js'],function(){</span>
+<span class="comment">//       /*do something in here*/</span>
+<span class="comment">//    })</span>
+<span class="keyword">var</span> loadScript = <span class="function"><span class="keyword">function</span>(<span class="params">script,callback</span>)</span>{
+    <span class="keyword">if</span> (!script){
+        <span class="built_in">console</span>.error(<span class="string">"not found script"</span>);
+        <span class="keyword">return</span>;
+    }
+    <span class="keyword">var</span> loadS = <span class="function"><span class="keyword">function</span>(<span class="params">url,callB</span>)</span>{
+        <span class="keyword">var</span> newScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+        newScript.type = <span class="string">"text/javascript"</span>;
+        <span class="keyword">if</span> (newScript.readyState){
+            newScript.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="keyword">if</span> (newScript.readyState === <span class="string">'loaded'</span> || newScript.readyState === <span class="string">'complete'</span>){
+                    newScript.onreadystatechange = <span class="literal">null</span>;
+                    callB();
+                }
+            };
+        }<span class="keyword">else</span>{
+            newScript.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                callB()
+            };
+        }
+        newScript.src = url;
+        <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(newScript);
+    };
+    <span class="keyword">if</span> (script.length){
+        (<span class="function"><span class="keyword">function</span> <span class="title">loadSIter</span>(<span class="params"></span>)</span>{
+            loadS(script[<span class="number">0</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                script.shift();
+                <span class="keyword">if</span> (script.length === <span class="number">0</span>){
+                    callback();
+                }<span class="keyword">else</span>{
+                    loadSIter();
+                }
+            })
+        })()
+    }<span class="keyword">else</span>{
+        loadS(script,callback);
+    }
+}
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/07/08/loadScript-In-Script/" data-id="cibu5lbck00092jw2izpw3k2i" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lazyLoad/">lazyLoad</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -146,6 +200,19 @@ availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为2
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/07/count-change/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">count-change(javascriptWithSICP)</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
