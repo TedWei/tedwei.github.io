@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: SICP | wei&#39;s blog</title>
+  <title>quickSort | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/SICP/index.html">
+  <meta name="description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
+Array.sort(function(a,b){return a&amp;gt;b});
+//a&amp;lt;b 是从小到大排序
+另外种想写快排，徒手纸上写出来实在太困难了。基础还是太差了在wiki上找到了各种版本的quickSort
+function quickSort(arr,compfunc,left,right){
+    if (argume">
+<meta property="og:type" content="article">
+<meta property="og:title" content="quickSort">
+<meta property="og:url" content="http://tedwei.github.io/2015/07/08/quickSort/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
+Array.sort(function(a,b){return a&amp;gt;b});
+//a&amp;lt;b 是从小到大排序
+另外种想写快排，徒手纸上写出来实在太困难了。基础还是太差了在wiki上找到了各种版本的quickSort
+function quickSort(arr,compfunc,left,right){
+    if (argume">
+<meta property="og:updated_time" content="2015-07-08T09:30:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="quickSort">
+<meta name="twitter:description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
+Array.sort(function(a,b){return a&amp;gt;b});
+//a&amp;lt;b 是从小到大排序
+另外种想写快排，徒手纸上写出来实在太困难了。基础还是太差了在wiki上找到了各种版本的quickSort
+function quickSort(arr,compfunc,left,right){
+    if (argume">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,59 +97,91 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>SICP</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-quickSort" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      quickSort
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/07/count-change/" class="title">count-change(javascriptWithSICP)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        count changescheme
-(define (count-change amount)
-    (cc amount 5))
-(define (cc amount kinds-of-coins)
-    (cond ((= amount 0) 1)
-          ((or (&lt; amount 0) (= kinds-of-coins 0)) 0)
-          (els
+      <p class="article-byline">
+        <a href="/2015/07/08/quickSort/" class="article-date">
+  <time datetime="2015-07-08T09:01:49.000Z" itemprop="datePublished">2015-07-08</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>周一面sobug 被问了至少两种数组排序。常用的大概就是</p>
+<pre><code><span class="keyword">Array</span>.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span><span class="comment">{return a&gt;b}</span>);</span>
+<span class="comment">//a&lt;b 是从小到大排序</span>
+</code></pre><p>另外种想写快排，徒手纸上写出来实在太困难了。基础还是太差了<br>在wiki上找到了各种版本的<a href="https://zh.wikipedia.org/wiki/快速排序" target="_blank" rel="external">quickSort</a></p>
+<pre><code>function <span class="built_in">quickSort</span>(arr,compfunc,<span class="keyword">left</span>,<span class="keyword">right</span>){
+    <span class="keyword">if</span> (arguments.length &lt; <span class="number">2</span>){
+        compfunc = <span class="built_in">quickSort</span>.comp;
+    }
+
+    <span class="keyword">if</span> (arguments.length !== <span class="number">4</span>){
+        <span class="keyword">left</span> = <span class="number">0</span>;
+        <span class="keyword">right</span> = arr.length - <span class="number">1</span>; 
+    }
+
+    <span class="keyword">if</span> (<span class="keyword">left</span> &gt; <span class="keyword">right</span>){
+        <span class="keyword">return</span> ;
+    }
+
+    <span class="keyword">var</span> index = <span class="built_in">quickSort</span>.<span class="built_in">partition</span>(arr,compfunc,<span class="keyword">left</span>,<span class="keyword">right</span>);
+    <span class="built_in">quickSort</span>(arr,compfunc,<span class="keyword">left</span>,index-<span class="number">1</span>);
+    <span class="built_in">quickSort</span>(arr,compfunc,index+<span class="number">1</span>,<span class="keyword">right</span>);
+};
+
+<span class="built_in">quickSort</span>.comp = function(a,b){
+    <span class="keyword">return</span> a &gt; b;
+};
+
+<span class="built_in">quickSort</span>.<span class="built_in">swap</span> = function(arr,lIndex,rIndex){
+    <span class="keyword">var</span> tmp = arr[lIndex];
+    arr[lIndex] = arr[rIndex];
+    arr[rIndex] = tmp;
+};
+
+<span class="built_in">quickSort</span>.<span class="built_in">partition</span> = function(arr,compfunc,<span class="keyword">left</span>,<span class="keyword">right</span>){
+    <span class="keyword">var</span> index = <span class="keyword">left</span>;
+    <span class="keyword">var</span> pivot = arr[index];
+    <span class="built_in">quickSort</span>.<span class="built_in">swap</span>(arr,index,<span class="keyword">right</span>);
+
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="keyword">left</span>; i&lt; <span class="keyword">right</span> ; i++){
+        <span class="keyword">if</span> (compfunc(arr[i],pivot)){
+            <span class="built_in">quickSort</span>.<span class="built_in">swap</span>(arr,index++,i);
+        }
+    }
+    <span class="built_in">quickSort</span>.<span class="built_in">swap</span>(arr,<span class="keyword">right</span>,index);
+    <span class="keyword">return</span> index;
+}
+
+<span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">11</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">999</span>,<span class="number">20</span>,<span class="number">0</span>];
+<span class="built_in">quickSort</span>(arr,function(a,b){<span class="keyword">return</span> a&lt;b;});
+console.log(arr);
+<span class="comment">//[0, 1, 2, 3, 3, 4, 4, 5, 6, 11, 20, 999]</span>
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/07/08/quickSort/" data-id="cibukevzq0009x1w2mw1omhh5" class="article-share-link">分享到</a>
+        
+        
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -147,6 +195,19 @@
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/08/loadScript-In-Script/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">loadScript In Script</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
