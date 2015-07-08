@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>quickSort | wei&#39;s blog</title>
+  <title>排序算法 | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
 Array.sort(function(a,b){return a&amp;gt;b});
@@ -12,7 +12,7 @@ Array.sort(function(a,b){return a&amp;gt;b});
 function quickSort(arr,compfunc,left,right){
     if (argume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="quickSort">
+<meta property="og:title" content="排序算法">
 <meta property="og:url" content="http://tedwei.github.io/2015/07/08/quickSort/index.html">
 <meta property="og:site_name" content="wei's blog">
 <meta property="og:description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
@@ -21,9 +21,9 @@ Array.sort(function(a,b){return a&amp;gt;b});
 另外种想写快排，徒手纸上写出来实在太困难了。基础还是太差了在wiki上找到了各种版本的quickSort
 function quickSort(arr,compfunc,left,right){
     if (argume">
-<meta property="og:updated_time" content="2015-07-08T09:30:10.000Z">
+<meta property="og:updated_time" content="2015-07-08T16:20:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="quickSort">
+<meta name="twitter:title" content="排序算法">
 <meta name="twitter:description" content="周一面sobug 被问了至少两种数组排序。常用的大概就是
 Array.sort(function(a,b){return a&amp;gt;b});
 //a&amp;lt;b 是从小到大排序
@@ -109,7 +109,7 @@ function quickSort(arr,compfunc,left,right){
           
   
     <h1 class="article-title" itemprop="name">
-      quickSort
+      排序算法
     </h1>
   
 
@@ -172,10 +172,31 @@ function quickSort(arr,compfunc,left,right){
 <span class="built_in">quickSort</span>(arr,function(a,b){<span class="keyword">return</span> a&lt;b;});
 console.log(arr);
 <span class="comment">//[0, 1, 2, 3, 3, 4, 4, 5, 6, 11, 20, 999]</span>
+</code></pre><p>inserSort</p>
+<pre><code>var insertSort = function(arr){
+    var key<span class="comment">;</span>
+    var j<span class="comment">;</span>
+    var t<span class="comment">;</span>
+    for (j = 1<span class="comment">; j &lt; arr.length; j++) {</span>
+        key = arr[j]<span class="comment">;</span>
+        t = j - 1<span class="comment">;</span>
+        while (t &gt;=0 &amp;&amp; arr[t] &gt; key){
+            arr[t+1] = arr[t]<span class="comment">;</span>
+            arr[t] = key<span class="comment">;</span>
+            t--<span class="comment">;</span>
+        }
+    }
+    return arr<span class="comment">;</span>
+}
+
+var arr=[<span class="number">1,2,3,4</span>,<span class="number">5,11,3,4</span>,<span class="number">6,999,20</span>,0]<span class="comment">;</span>
+insertSort(arr)<span class="comment">;</span>
+console.log(arr)<span class="comment">;</span>
+//[0, 1, 2, 3, 3, 4, 4, 5, 6, 11, 20, 999]
 </code></pre>
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/07/08/quickSort/" data-id="cibukevzq0009x1w2mw1omhh5" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/07/08/quickSort/" data-id="cibuz2dvz0009zdw2mohhwzp1" class="article-share-link">分享到</a>
         
         
       </footer>
@@ -221,7 +242,7 @@ console.log(arr);
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/07/08/quickSort/" class="title">quickSort</a></p>
+              <p class="item-title"><a href="/2015/07/08/quickSort/" class="title">排序算法</a></p>
               <p class="item-date"><time datetime="2015-07-08T09:01:49.000Z" itemprop="datePublished">2015-07-08</time></p>
             </div>
           </li>
