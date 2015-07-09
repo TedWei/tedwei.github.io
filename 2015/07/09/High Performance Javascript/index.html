@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: scheme | wei&#39;s blog</title>
+  <title>高性能javascript | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/scheme/index.html">
+  <meta name="description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能javascript">
+<meta property="og:url" content="http://tedwei.github.io/2015/07/09/High Performance Javascript/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
+<meta property="og:updated_time" content="2015-07-09T15:17:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="高性能javascript">
+<meta name="twitter:description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,126 +85,65 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>scheme</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-High Performance Javascript" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      高性能javascript
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-07T15:26:06.000Z" itemprop="datePublished">2015-07-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/07/count-change/" class="title">count-change(javascriptWithSICP)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        count changescheme
-(define (count-change amount)
-    (cc amount 5))
-(define (cc amount kinds-of-coins)
-    (cond ((= amount 0) 1)
-          ((or (&lt; amount 0) (= kinds-of-coins 0)) 0)
-          (els
+      <p class="article-byline">
+        <a href="/2015/07/09/High Performance Javascript/" class="article-date">
+  <time datetime="2015-07-09T14:25:47.000Z" itemprop="datePublished">2015-07-09</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>数据访问方面有几个原则<br>1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些<br>2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的<br>3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度<br>4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。</p>
+<p>DOM方面<br>1.减少DOM的访问次数，合并多次访问的DOM为同一变量。<br>2.减少同一DOM的插入次数，重复添加数据时可以使用变量暂时存储数据，在用innerHTML一次性插入。<br>3.需要重复创建节点的时候，使用node.cloneNode()可以提升更多的性能。猜测是只因为只需要访问之前创建的节点的局部变量。比访问document.createElement更快速。<br>4.需要遍历比较HTML集合时。将其转存到数组中，比较的数据更快。</p>
+<pre><code>function toArray(coll){
+    <span class="keyword">var</span> a =[];
+    <span class="keyword">for</span> (<span class="keyword">var</span> i &lt; <span class="built_in">len</span> ; <span class="built_in">len</span> = coll.length;i--;){
+        a[i] = coll[i];
+    }
+    <span class="keyword">return</span> a;
+}
+
+<span class="keyword">var</span> coll = document.getElementByTagName(<span class="string">'div'</span>);
+<span class="keyword">var</span> ar = toArray(coll);
+
+<span class="comment">//慢一些的做法</span>
+<span class="keyword">for</span> (<span class="keyword">var</span> i &lt;<span class="built_in">len</span>; <span class="built_in">len</span> = coll.length;i--;){
+    <span class="comment">/*do something*/</span>
+}
+
+<span class="comment">//快一些的做法</span>
+<span class="keyword">for</span> (<span class="keyword">var</span> i &lt; <span class="built_in">len</span>;<span class="built_in">len</span> = ar.length;i--;){
+    <span class="comment">/*do something*/</span>
+}
+</code></pre><p>5.缓存和合并任一作用域里重复使用的变量，将跨域(或全局)变量变为局部变量，将多个同一对象成员的访问合并为同一变量的访问<br>6.IE8及以上优先使用querySelectorAll()的方法.尽量使用只返回元素节点的DOM API 例如：children , childElementCount , firstElementChild , lastElementChild , nextElementSibling , previousElmentSibling<br>7.减少重排和重绘的消耗，合并修改和读取，合并CSS的属性修改，使用cssText，或者更改className。重复修改DOM时候，第一种方法可使用暂时设置需要修改的DOM属性为display:none; 修改完成后在显示出来。第二种可以将需要添加的DOM片段添加到文本片段中在一次性插入到DOM中 document.createDocumentFragment。第三种可以先复制一个需要更改的node的副本。在副本里面进行修改。修改完成后替换掉原来的node。推荐使用第二种方法。<br>8.在获取布局信息时，浏览器会刷新队列。尽量用局部变量缓存需要的布局信息。<br>9.涉及动画因素时，使用绝对定位将其脱离文档流。以减少动画中需要重排和重绘的次数和影响的文档树。减少IE中:hover 元素的使用<br>10.事件委托。合并同一元素下子元素的相同事件。在对元素进行判断进行不同的事件操作</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/07/09/High Performance Javascript/" data-id="cibwc94ar0010tbw29v0pg3ji" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
   
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-06T16:16:38.000Z" itemprop="datePublished">2015-07-07</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/07/ackermann-And-Fibonacci-JavascriptWithSICP/" class="title">ackermann And Fibonacci (JavascriptWithSICP)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        ackerman in scheme and javascriptscheme
-//scheme edition
-(define (A x y)
-  (cond ((= y 0) 0)
-        ((= x 0) (* 2 y))
-        ((= y 1) 2)
-        (else (A (- x 1)
-                 (A x (- y 1))))))
-j
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-    
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:29:48.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/javascript-love-with-SICP/" class="title">javascript love with SICP</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        最近在学习 SICP 。准备用 scheme 和 javascript 都实现一份书中的代码今天贴两段关于计算阶乘的线性的递归和迭代
-线性递归scheme:  
-(define (factorial n) 
-        (if (= n 1)
-            1
-            (* n (factorial (- n 1)))))
-javascript:  
-var fact
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -214,6 +157,19 @@ var fact
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/08/quickSort/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">排序算法</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
