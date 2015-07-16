@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: node | wei&#39;s blog</title>
+  <title>CSS3 动画相关 | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/node/index.html">
+  <meta name="description" content="CSS3 常用的跟动画相关的有三个属性 transition,transform,animation
+transition的基本结构如下
+transition : transition-property transition-duration transition-timing-function transition-delay
+transition-property 指定某个属性改变时执行 tr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3 动画相关">
+<meta property="og:url" content="http://tedwei.github.io/2015/07/16/CSS3-animation-about/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="CSS3 常用的跟动画相关的有三个属性 transition,transform,animation
+transition的基本结构如下
+transition : transition-property transition-duration transition-timing-function transition-delay
+transition-property 指定某个属性改变时执行 tr">
+<meta property="og:updated_time" content="2015-07-16T14:51:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="CSS3 动画相关">
+<meta name="twitter:description" content="CSS3 常用的跟动画相关的有三个属性 transition,transform,animation
+transition的基本结构如下
+transition : transition-property transition-duration transition-timing-function transition-delay
+transition-property 指定某个属性改变时执行 tr">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,60 +91,72 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>node</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-CSS3-animation-about" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      CSS3 动画相关
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T16:11:10.000Z" itemprop="datePublished">2015-07-05</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/05/javascript-the-good-parts/" class="title">javascript the good parts</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        读书笔记—javascript the good parts为 Function 添加 method 
-Function.prototype.method = function(name,func){
-    if (!this.prototype[name]){
-        this.prototype[name] = func;
+      <p class="article-byline">
+        <a href="/2015/07/16/CSS3-animation-about/" class="article-date">
+  <time datetime="2015-07-16T13:58:45.000Z" itemprop="datePublished">2015-07-16</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>CSS3 常用的跟动画相关的有三个属性 transition,transform,animation</p>
+<p>transition的基本结构如下</p>
+<pre><code><span class="attribute">transition</span> : <span class="attribute">transition-property</span> <span class="attribute">transition-duration</span> <span class="attribute">transition-timing-function</span> <span class="attribute">transition-delay</span>
+</code></pre><p>transition-property 指定某个属性改变时执行 transition 效果。主要值有 none,all,indent(属性名)。可指定的属性名可见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank" rel="external">transition 可用属性List</a></p>
+<p>transition-duration 是transition持续的时间 单位可为s 或者ms</p>
+<p>transition-timing-function 指transition的变换速率。<br>主要值有<br>1.ease:（逐渐变慢）<br>2.linear:（匀速）<br>3.ease-in:（加速）<br>4.ease-out:（减速）<br>5.ease-in-out:（加速然后减速）<br>6.cubic-bezier:<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#The_cubic-bezier(" target="_blank" rel="external">使用贝赛尔曲线</a>_class_of_timing-functions)</p>
+<p>transition-delay 改变属性值多少秒后执行transition效果</p>
+<p>transform的基本结构如下</p>
+<pre><code>transform : none |<span class="string"> rotate </span>|<span class="string"> scale </span>|<span class="string"> skew </span>|<span class="string"> translate </span>|<span class="string"> matrix;</span>
+</code></pre><p>transform-origin 定义transfrom的基点 支持水平方向的left,center,right 垂直方向的top,center,bottom</p>
+<p>rotate : 2D选择  值为负数则为逆向旋转 单位为deg<br>scale : 以倍数的缩放 scale(x,y) scaleX scaleY<br>skew: 扭曲角度 skew(deg,deg) skewX skewY<br>translate : 移动 translate(x,y) translateX translateY<br>matrix: 矩阵</p>
+<p>animation</p>
+<pre><code><span class="attribute">animation</span>: <span class="attribute">animation-name</span> <span class="attribute">animation-duration</span> <span class="attribute">animation-timing-function</span> <span class="attribute">animation-delay</span> <span class="attribute">animation-iteration-count</span> <span class="attribute">animation-direction</span> <span class="attribute">animation-play-state</span>
+</code></pre><p>animation-name : ‘leftToRight’<br>使用keyframes 定义的动画关键帧的属性变化</p>
+<pre><code><span class="function_or_atom">keyframes</span> <span class="string">'leftToRight'</span> {
+    <span class="number">0</span><span class="comment">% {</span>
+        <span class="function_or_atom">left</span>: <span class="number">0</span><span class="comment">%;</span>
+    }
+    <span class="number">33</span><span class="comment">% {</span>
+        <span class="function_or_atom">left</span>: <span class="number">33</span><span class="comment">%;</span>
+    }
+    <span class="number">67</span><span class="comment">% {</span>
+        <span class="function_or_atom">left</span>: <span class="number">67</span><span class="comment">%;</span>
+    }
+    <span class="number">100</span><span class="comment">% {</span>
+        <span class="function_or_atom">left</span>:<span class="number">100</span><span class="comment">%;</span>
     }
 }
+</code></pre><p>animation-duration 定义动画持续时间<br>animation-timing-function 定义动画速率的变化 跟transition-timing-function 一样<br>animation-delay 定义动画延迟的时间<br>animation-iteration-count 动画循环的次数 可选number 和 infinite<br>animation-direction  值 normal  alternate (偶次正方向播放  奇次反方向播放)<br>animation-play-state 值 running | paused</p>
+<p>资料：<br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank" rel="external">CSS</a><br><a href="http://www.w3cplus.com/content/css3-animation" target="_blank" rel="external">w3cplus</a></p>
 
-//can use this to del
-      </p>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/07/16/CSS3-animation-about/" data-id="cic6bewkp0000oqw2ryhw4crr" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -148,6 +170,19 @@ Function.prototype.method = function(name,func){
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/09/High Performance Javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">高性能javascript</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
