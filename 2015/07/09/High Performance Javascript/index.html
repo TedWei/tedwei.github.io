@@ -5,19 +5,19 @@
   
   <title>高性能javascript | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
-DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
+  <meta name="description" content="数据访问方面1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同一DOM的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高性能javascript">
 <meta property="og:url" content="http://tedwei.github.io/2015/07/09/High Performance Javascript/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
-DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
-<meta property="og:updated_time" content="2015-07-09T15:17:33.000Z">
+<meta property="og:description" content="数据访问方面1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同一DOM的">
+<meta property="og:updated_time" content="2015-07-16T13:56:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高性能javascript">
-<meta name="twitter:description" content="数据访问方面有几个原则1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
-DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同">
+<meta name="twitter:description" content="数据访问方面1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。
+DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。2.减少同一DOM的">
   
   
     <link rel="icon" href="/favicon.png">
@@ -109,7 +109,7 @@ DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>数据访问方面有几个原则<br>1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些<br>2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的<br>3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度<br>4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。</p>
+        <p>数据访问方面<br>1.访问局部变量和直接量速度最快，访问数组和对象成员慢一些<br>2.访问越靠近的变量，速度越快。变量在作用域里局部变量是最近的，跨域变量其次，全局变量是最深的<br>3.可以将常用的数组，对象成员，跨域变量变为局部变量以加快访问速度<br>4.嵌套的对象成员会影响访问速度，属性或者方法在原型链里面越深，越影响访问速度。</p>
 <p>DOM方面<br>1.减少DOM的访问次数，合并多次访问的DOM为同一变量。<br>2.减少同一DOM的插入次数，重复添加数据时可以使用变量暂时存储数据，在用innerHTML一次性插入。<br>3.需要重复创建节点的时候，使用node.cloneNode()可以提升更多的性能。猜测是只因为只需要访问之前创建的节点的局部变量。比访问document.createElement更快速。<br>4.需要遍历比较HTML集合时。将其转存到数组中，比较的数据更快。</p>
 <pre><code>function toArray(coll){
     <span class="keyword">var</span> a =[];
@@ -132,10 +132,18 @@ DOM方面1.减少DOM的访问次数，合并多次访问的DOM为同一变量。
     <span class="comment">/*do something*/</span>
 }
 </code></pre><p>5.缓存和合并任一作用域里重复使用的变量，将跨域(或全局)变量变为局部变量，将多个同一对象成员的访问合并为同一变量的访问<br>6.IE8及以上优先使用querySelectorAll()的方法.尽量使用只返回元素节点的DOM API 例如：children , childElementCount , firstElementChild , lastElementChild , nextElementSibling , previousElmentSibling<br>7.减少重排和重绘的消耗，合并修改和读取，合并CSS的属性修改，使用cssText，或者更改className。重复修改DOM时候，第一种方法可使用暂时设置需要修改的DOM属性为display:none; 修改完成后在显示出来。第二种可以将需要添加的DOM片段添加到文本片段中在一次性插入到DOM中 document.createDocumentFragment。第三种可以先复制一个需要更改的node的副本。在副本里面进行修改。修改完成后替换掉原来的node。推荐使用第二种方法。<br>8.在获取布局信息时，浏览器会刷新队列。尽量用局部变量缓存需要的布局信息。<br>9.涉及动画因素时，使用绝对定位将其脱离文档流。以减少动画中需要重排和重绘的次数和影响的文档树。减少IE中:hover 元素的使用<br>10.事件委托。合并同一元素下子元素的相同事件。在对元素进行判断进行不同的事件操作</p>
+<pre><code>document.body.addEventListener(<span class="string">"click"</span>,funciton(e<span class="function">)</span>{
+        //<span class="instruction"> check </span>className<span class="instruction"> or </span>otherwise you want
+       <span class="instruction"> if </span>(e.target.className == ''<span class="function">)</span>{
+
+        }
+}<span class="function">)</span>
+</code></pre><p>算法和控制流程<br>1.尽量使用 for,while ,do while ,避免使用for in (除非需要遍历一个属性未知的对象)<br>2.改善循环的性能：减少每次循环的运算量和减少循环迭代次数<br>3.一般情况下switch比 if else 更快。在大量数据情况下 使用查找表（数组，对象）比 if else 和switch 更快<br>4.浏览器有调用栈大小限制。递归算法往往会受到限制 尽量改为迭代算法。(速度换空间)</p>
+<p>字符串<br>1.使用+= 或者=+ 会产生临时字符串 效率低于 str = str+””;<br>2.多次缓存连接字符串的性能远低于 暂存数组在使用join 相连接的速度。</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/07/09/High Performance Javascript/" data-id="cibwc94ar0010tbw29v0pg3ji" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/07/09/High Performance Javascript/" data-id="cic69fyf90010vnw2gvrhbsdp" class="article-share-link">分享到</a>
         
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
