@@ -17,7 +17,7 @@ $ npm install --">
 之后请安装 gulp
 $ npm install -g gulp //Install gulp globally
 $ npm install --">
-<meta property="og:updated_time" content="2015-08-05T08:08:00.000Z">
+<meta property="og:updated_time" content="2015-08-05T08:40:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="buildWithGulp">
 <meta name="twitter:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
@@ -127,7 +127,9 @@ gulp.task(<span class="string">'default'</span>,<span class="function"><span cla
 </code></pre><p>运行gulp</p>
 <pre><code><span class="variable">$ </span>gulp
 </code></pre><p>gulp的<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API文档</a><br>支持如下gulp.src | gulp.dest | gulp.task | gulp.watch</p>
-<p>下面是一个基本的支持liveload,CSS压缩，JS压缩，CSS自动添加浏览器前缀支持.<br>需要引入以下gulp插件<br>    $ npm install —save-dev gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-rename gulp-cached gulp-connect</p>
+<p>下面是一个基本的支持liveload,CSS压缩，JS压缩，CSS自动添加浏览器前缀支持.<br>需要引入以下gulp插件</p>
+<pre><code>$ npm install --save-dev gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-<span class="keyword">rename</span> gulp-cached gulp-<span class="keyword">connect</span>
+</code></pre><p>gulpfile.js 完整文件如下</p>
 <pre><code><span class="pi">'use strict'</span>;
 
 <span class="comment">// 载入外挂</span>
@@ -207,7 +209,7 @@ gulp.task(<span class="string">'watch'</span>, <span class="function"><span clas
 </code></pre>
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/08/05/buildWithGulp/" data-id="cicyhsu1p000sg4w2y9q629q1" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/08/05/buildWithGulp/" data-id="cicyiymgl000sulw217rravki" class="article-share-link">分享到</a>
         
         
       </footer>
