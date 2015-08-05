@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: CSS3 | wei&#39;s blog</title>
+  <title>buildWithGulp | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/CSS3/index.html">
+  <meta name="description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
+之后请安装 gulp
+$ npm install -g gulp //Install gulp globally
+$ npm install --">
+<meta property="og:type" content="article">
+<meta property="og:title" content="buildWithGulp">
+<meta property="og:url" content="http://tedwei.github.io/2015/08/05/buildWithGulp/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
+之后请安装 gulp
+$ npm install -g gulp //Install gulp globally
+$ npm install --">
+<meta property="og:updated_time" content="2015-08-05T08:08:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="buildWithGulp">
+<meta name="twitter:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
+之后请安装 gulp
+$ npm install -g gulp //Install gulp globally
+$ npm install --">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,56 +91,129 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>CSS3</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-buildWithGulp" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      buildWithGulp
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-16T13:58:45.000Z" itemprop="datePublished">2015-07-16</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/16/CSS3-animation-about/" class="title">CSS3 动画相关</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        CSS3 常用的跟动画相关的有三个属性 transition,transform,animation
-transition的基本结构如下
-transition : transition-property transition-duration transition-timing-function transition-delay
-transition-property 指定某个属性改变时执行 tr
+      <p class="article-byline">
+        <a href="/2015/08/05/buildWithGulp/" class="article-date">
+  <time datetime="2015-08-05T07:51:42.000Z" itemprop="datePublished">2015-08-05</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。<br>例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）<br>gulp是运行于 Node 下的组件<br>所以需要先安装<a href="https://nodejs.org/download/" target="_blank" rel="external">Node</a></p>
+<p>之后请安装 <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" rel="external">gulp</a></p>
+<pre><code>$ npm <span class="keyword">install</span> -g gulp //<span class="keyword">Install</span> gulp globally
+$ npm <span class="keyword">install</span> --save-dev gulp //<span class="keyword">Install</span> gulp in your <span class="keyword">project</span> devDependencies
+</code></pre><p>在项目文件夹根目录下创建gulpfile.js</p>
+<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);
+gulp.task(<span class="string">'default'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="string">"gulp running"</span>);
+})
+</code></pre><p>运行gulp</p>
+<pre><code><span class="variable">$ </span>gulp
+</code></pre><p>gulp的<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">API文档</a><br>支持如下gulp.src | gulp.dest | gulp.task | gulp.watch</p>
+<p>下面是一个基本的支持liveload,CSS压缩，JS压缩，CSS自动添加浏览器前缀支持.<br>需要引入以下gulp插件<br>    $ npm install —save-dev gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-rename gulp-cached gulp-connect</p>
+<pre><code><span class="pi">'use strict'</span>;
+
+<span class="comment">// 载入外挂</span>
+<span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),
+  autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>),
+  minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),
+  jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),
+  uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),
+  rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),
+  cache = <span class="built_in">require</span>(<span class="string">'gulp-cached'</span>),
+  connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>);
+
+
+<span class="comment">// 样式</span>
+gulp.task(<span class="string">'compressCSS'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">return</span> gulp.src([<span class="string">'module/**/*.css'</span>, <span class="string">'!module/**/*.min.css'</span>], {
+      base: <span class="string">"./"</span>
+    })
+    .pipe(autoprefixer({
+      browser: [<span class="string">'last 2 version'</span>, <span class="string">'safari 5'</span>, <span class="string">'ie 8'</span>, <span class="string">'ie 9'</span>, <span class="string">'opera 12.1'</span>, <span class="string">'ios 6'</span>, <span class="string">'android 4'</span>]
+    }))
+    .pipe(cache(<span class="string">'compressCSSing'</span>))
+    .pipe(minifycss())
+    .pipe(rename({
+      suffix: <span class="string">'.min'</span>
+    }))
+    .pipe(gulp.dest(<span class="string">'.'</span>))
+    .pipe(connect.reload());
+});
+
+
+<span class="comment">//压缩脚本</span>
+gulp.task(<span class="string">'compressjs'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">return</span> gulp.src([<span class="string">'module/**/*.js'</span>, <span class="string">'!module/**/*.min.js'</span>], {
+      base: <span class="string">"./"</span>
+    })
+    .pipe(cache(<span class="string">'compressJSing'</span>))
+    .pipe(uglify())
+    .pipe(rename({
+      extname: <span class="string">'.min.js'</span>
+    }))
+    .pipe(gulp.dest(<span class="string">'.'</span>))
+    .pipe(connect.reload());
+})
+
+
+gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">return</span> gulp.src(<span class="string">'module/**/*.html'</span>)
+    .pipe(connect.reload());
+})
+
+
+<span class="comment">// 预设任务</span>
+gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  gulp.start(<span class="string">'server'</span>);
+});
+
+gulp.task(<span class="string">'dev'</span>, [<span class="string">'server'</span>, <span class="string">'watch'</span>]);
+
+gulp.task(<span class="string">'server'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  connect.server({
+    livereload: <span class="literal">true</span>,
+    port: <span class="number">3000</span>
+  })
+})
+
+<span class="comment">// 看守</span>
+gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+
+  gulp.watch([<span class="string">'module/**/*.js'</span>, <span class="string">'!module/**/*.min.js'</span>], [<span class="string">'compressjs'</span>]);
+
+  gulp.watch([<span class="string">'module/**/*.css'</span>, <span class="string">'!module/**/*.min.css'</span>], [<span class="string">'compressCSS'</span>]);
+
+  gulp.watch([<span class="string">'module/**/*.html'</span>], [<span class="string">'html'</span>]);
+
+});
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2015/08/05/buildWithGulp/" data-id="cicyhsu1p000sg4w2y9q629q1" class="article-share-link">分享到</a>
+        
+        
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -144,6 +227,19 @@ transition-property 指定某个属性改变时执行 tr
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/27/howbrowserswork/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">howbrowserswork</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
