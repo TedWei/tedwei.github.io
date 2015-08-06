@@ -5,25 +5,22 @@
   
   <title>buildWithGulp | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
-之后请安装 gulp
-$ npm install -g gulp //Install gulp globally
-$ npm install --">
+  <meta name="description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装NodeNode自带包管理器NPM 但是有墙的关系，速度不是很理想的可以尝试国内的镜像CNPM
+$ npm install cnpm -g
+//或者使用这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="buildWithGulp">
 <meta property="og:url" content="http://tedwei.github.io/2015/08/05/buildWithGulp/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
-之后请安装 gulp
-$ npm install -g gulp //Install gulp globally
-$ npm install --">
-<meta property="og:updated_time" content="2015-08-05T08:40:33.000Z">
+<meta property="og:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装NodeNode自带包管理器NPM 但是有墙的关系，速度不是很理想的可以尝试国内的镜像CNPM
+$ npm install cnpm -g
+//或者使用这个">
+<meta property="og:updated_time" content="2015-08-06T01:35:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="buildWithGulp">
-<meta name="twitter:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装Node
-之后请安装 gulp
-$ npm install -g gulp //Install gulp globally
-$ npm install --">
+<meta name="twitter:description" content="gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）gulp是运行于 Node 下的组件所以需要先安装NodeNode自带包管理器NPM 但是有墙的关系，速度不是很理想的可以尝试国内的镜像CNPM
+$ npm install cnpm -g
+//或者使用这个">
   
   
     <link rel="icon" href="/favicon.png">
@@ -115,7 +112,11 @@ $ npm install --">
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        <p>gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。<br>例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）<br>gulp是运行于 Node 下的组件<br>所以需要先安装<a href="https://nodejs.org/download/" target="_blank" rel="external">Node</a></p>
+        <p>gulp是一个前端构建工具。使用它你可以将以前自己手工干的活儿进行自动化构建。<br>例如自动刷新页面，检查JS语法，压缩等，是个好工具。最近准备在组里推广下，在此写个教程出来。（如有遗失或错误，请黑）<br>gulp是运行于 Node 下的组件<br>所以需要先安装<a href="https://nodejs.org/download/" target="_blank" rel="external">Node</a><br>Node自带包管理器NPM 但是有墙的关系，速度不是很理想的可以尝试国内的镜像<a href="https://github.com/cnpm/cnpm" target="_blank" rel="external">CNPM</a></p>
+<pre><code>$ npm install cnpm -<span class="keyword">g</span>
+<span class="comment">//或者使用这个镜像</span>
+$ npm install cnpm -<span class="keyword">g</span> --registry=https:<span class="comment">//registry.npm.taobao.org</span>
+</code></pre><p>之后就可以使用cnpm,来替代npm命令了</p>
 <p>之后请安装 <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" rel="external">gulp</a></p>
 <pre><code>$ npm <span class="keyword">install</span> -g gulp //<span class="keyword">Install</span> gulp globally
 $ npm <span class="keyword">install</span> --save-dev gulp //<span class="keyword">Install</span> gulp in your <span class="keyword">project</span> devDependencies
@@ -209,7 +210,7 @@ gulp.task(<span class="string">'watch'</span>, <span class="function"><span clas
 </code></pre>
       </div>
       <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/08/05/buildWithGulp/" data-id="cicyj0jdv000swbw2hkxi7b2d" class="article-share-link">分享到</a>
+        <a data-url="http://tedwei.github.io/2015/08/05/buildWithGulp/" data-id="ciczj85ek000s5tw2dflznpg9" class="article-share-link">分享到</a>
         
         
       </footer>
