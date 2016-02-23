@@ -3,39 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>loadScript In Script | wei&#39;s blog</title>
+  <title>Archives: 2016/2 | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简易的延迟加载方法
-//  support multiple script loading
-//  example 
-//  loadScript(&apos;jQuery.js&apos;,function(){
-//       /*do something in here*/
-//    })
-//  or multiple
-//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
-<meta property="og:type" content="article">
-<meta property="og:title" content="loadScript In Script">
-<meta property="og:url" content="http://tedwei.github.io/2015/07/08/loadScript-In-Script/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wei's blog">
+<meta property="og:url" content="http://tedwei.github.io/archives/2016/02/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description" content="简易的延迟加载方法
-//  support multiple script loading
-//  example 
-//  loadScript(&apos;jQuery.js&apos;,function(){
-//       /*do something in here*/
-//    })
-//  or multiple
-//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
-<meta property="og:updated_time" content="2015-07-08T02:55:50.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="loadScript In Script">
-<meta name="twitter:description" content="简易的延迟加载方法
-//  support multiple script loading
-//  example 
-//  loadScript(&apos;jQuery.js&apos;,function(){
-//       /*do something in here*/
-//    })
-//  or multiple
-//  loadScript([&apos;jQuery.js&apos;,&apos;bootstrap.js&apos;]">
+<meta name="twitter:title" content="wei's blog">
+<meta name="twitter:description">
   
   
     <link rel="icon" href="/favicon.png">
@@ -103,90 +81,53 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header">未分类</h1>
+              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2016/2</h1>
             </div>
             <div class="main-body-content">
               
-  <article id="post-loadScript-In-Script" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-      <!--  -->
-      
-        <header class="article-header">
-          
   
-    <h1 class="article-title" itemprop="name">
-      loadScript In Script
-    </h1>
   
-
-        </header>
+    
+    
       
-      <p class="article-byline">
-        <a href="/2015/07/08/loadScript-In-Script/" class="article-date">
-  <time datetime="2015-07-08T01:19:33.000Z" itemprop="datePublished">2015-07-08</time>
-</a>
-      </p>
-      <div class="article-entry" itemprop="articleBody">
-        <p>简易的延迟加载方法</p>
-<pre><code><span class="comment">//  support multiple script loading</span>
-<span class="comment">//  example </span>
-<span class="comment">//  loadScript('jQuery.js',function(){</span>
-<span class="comment">//       /*do something in here*/</span>
-<span class="comment">//    })</span>
-<span class="comment">//  or multiple</span>
-<span class="comment">//  loadScript(['jQuery.js','bootstrap.js'],function(){</span>
-<span class="comment">//       /*do something in here*/</span>
-<span class="comment">//    })</span>
-<span class="keyword">var</span> loadScript = <span class="function"><span class="keyword">function</span>(<span class="params">script,callback</span>)</span>{
-    <span class="keyword">if</span> (!script){
-        <span class="built_in">console</span>.error(<span class="string">"not found script"</span>);
-        <span class="keyword">return</span>;
-    }
-    <span class="keyword">var</span> loadS = <span class="function"><span class="keyword">function</span>(<span class="params">url,callB</span>)</span>{
-        <span class="keyword">var</span> newScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
-        newScript.type = <span class="string">"text/javascript"</span>;
-        <span class="keyword">if</span> (newScript.readyState){
-            newScript.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                <span class="keyword">if</span> (newScript.readyState === <span class="string">'loaded'</span> || newScript.readyState === <span class="string">'complete'</span>){
-                    newScript.onreadystatechange = <span class="literal">null</span>;
-                    callB();
-                }
-            };
-        }<span class="keyword">else</span>{
-            newScript.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                callB()
-            };
-        }
-        newScript.src = url;
-        <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(newScript);
-    };
-    <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.apply(script) === <span class="string">'[object Array]'</span>){
-        (<span class="function"><span class="keyword">function</span> <span class="title">loadSIter</span>(<span class="params"></span>)</span>{
-            loadS(script[<span class="number">0</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                script.shift();
-                <span class="keyword">if</span> (script.length === <span class="number">0</span>){
-                    callback();
-                }<span class="keyword">else</span>{
-                    loadSIter();
-                }
-            })
-        })()
-    }<span class="keyword">else</span>{
-        loadS(script,callback);
-    }
-}
-</code></pre>
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2016</a>
+        </div>
+        <div class="archives">
+    
+    
+    
+      <div class="article-row">
+    
+        
+  <article class="article article-summary">
+    <div class="article-summary-inner">
+      
+      <div class="article-meta">
+        <p class="category"></p>
+        <p class="date"><time datetime="2016-02-23T01:51:24.000Z" itemprop="datePublished">2016-02-23</time></p>
       </div>
-      <footer class="article-footer">
-        <a data-url="http://tedwei.github.io/2015/07/08/loadScript-In-Script/" data-id="cikytcv0r0004r5w2wgvbcvsv" class="article-share-link">分享到</a>
+      <h2 class="article-title">
+        <a href="/2016/02/23/gulp-inline-source-gulp-replace/" class="title">gulp-inline-source &amp;&amp; gulp-file-include</a>
+      </h2>
+      <p class="article-excerpt">
         
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lazyLoad/">lazyLoad</a></li></ul>
-
-      </footer>
+        在前端开发中我们经常会碰到需要替换代码片段。在开发过程中 我们需要将共用的模块抽取出来。但是在发布到线上时需要内嵌进去。gulp-inline-source[https://github.com/fmal/gulp-inline-source]gulp-file-include[https://github.com/coderhaoxin/gulp-file-include]是两个非常好用的相关组
+      </p>
     </div>
   </article>
+
+    
+      </div>
+    
   
+  
+    </div></section>
+  
+  
+
 
             </div>
           </section>
@@ -200,29 +141,6 @@
       
     </ul>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/08/quickSort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <p class="article-nav-title">
-        
-          排序算法
-        
-      </p>
-      <i class="icon" id="icon-chevron-right"></i>
-    </a>
-  
-  
-    <a href="/2015/07/07/count-change/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <p class="article-nav-title">count-change(javascriptWithSICP)</p>
-      <i class="icon" id="icon-chevron-left"></i>
-    </a>
-  
-</nav>
-
   
   <div class="widgets-container">
     

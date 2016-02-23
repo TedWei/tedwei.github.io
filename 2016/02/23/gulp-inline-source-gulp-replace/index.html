@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp-inline-source &amp;&amp; gulp-file-include | wei&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在前端开发中我们经常会碰到需要替换代码片段。在开发过程中 我们需要将共用的模块抽取出来。但是在发布到线上时需要内嵌进去。gulp-inline-source[https://github.com/fmal/gulp-inline-source]gulp-file-include[https://github.com/coderhaoxin/gulp-file-include]是两个非常好用的相关组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp-inline-source && gulp-file-include">
+<meta property="og:url" content="http://tedwei.github.io/2016/02/23/gulp-inline-source-gulp-replace/index.html">
+<meta property="og:site_name" content="wei's blog">
+<meta property="og:description" content="在前端开发中我们经常会碰到需要替换代码片段。在开发过程中 我们需要将共用的模块抽取出来。但是在发布到线上时需要内嵌进去。gulp-inline-source[https://github.com/fmal/gulp-inline-source]gulp-file-include[https://github.com/coderhaoxin/gulp-file-include]是两个非常好用的相关组">
+<meta property="og:updated_time" content="2016-02-23T02:00:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp-inline-source && gulp-file-include">
+<meta name="twitter:description" content="在前端开发中我们经常会碰到需要替换代码片段。在开发过程中 我们需要将共用的模块抽取出来。但是在发布到线上时需要内嵌进去。gulp-inline-source[https://github.com/fmal/gulp-inline-source]gulp-file-include[https://github.com/coderhaoxin/gulp-file-include]是两个非常好用的相关组">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+    <style type="text/css">
+      .logo { background-image:url(logo-header.png); }
+    </style>
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <!-- <h1 class="logo-wrap"> -->
+            <!-- <a href="/" class="logo"></a> -->
+          <!-- </h1> -->
+          <!--  -->
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                    
+                  
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://tedwei.github.io"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header">未分类</h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-gulp-inline-source-gulp-replace" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      gulp-inline-source &amp;&amp; gulp-file-include
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2016/02/23/gulp-inline-source-gulp-replace/" class="article-date">
+  <time datetime="2016-02-23T01:51:24.000Z" itemprop="datePublished">2016-02-23</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>在前端开发中我们经常会碰到需要替换代码片段。<br>在开发过程中 我们需要将共用的模块抽取出来。但是在发布到线上时需要内嵌进去。<br>gulp-inline-source[<a href="https://github.com/fmal/gulp-inline-source" target="_blank" rel="external">https://github.com/fmal/gulp-inline-source</a>]<br>gulp-file-include[<a href="https://github.com/coderhaoxin/gulp-file-include" target="_blank" rel="external">https://github.com/coderhaoxin/gulp-file-include</a>]<br>是两个非常好用的相关组件  一个是用来文件替换  一个是用来使用内嵌资源<br>比如一个完整的开发环境代码如下</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+@@include('./components/head.html')
+
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">header</span> <span class="attribute">class</span>=<span class="value">"app-bar promote-layer"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"app-bar-container"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"menu"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">inline</span> <span class="attribute">src</span>=<span class="value">"images/hamburger.svg"</span> <span class="attribute">alt</span>=<span class="value">"Menu"</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"logo"</span>&gt;</span>Web
+    <span class="tag">&lt;<span class="title">strong</span>&gt;</span>Starter Kit<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"app-bar-actions"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">button</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon
+    icon-star"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"navdrawer-container promote-layer"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>Navigation<span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"menu"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#hello"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#get-started"</span>&gt;</span>Get
+    Started<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#styleguide"</span>&gt;</span>Style Guide<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">main</span> <span class="attribute">id</span>=<span class="value">"view"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">id</span>=<span class="value">"hello"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Welcome to Web Starter Kit.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">id</span>=<span class="value">"get-started"</span>&gt;</span>Get Started.<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Read how to <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://developers.google.com/web/starter-kit"</span>&gt;</span>Get Started<span class="tag">&lt;/<span class="title">a</span>&gt;</span> or check out the <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"styleguide.html"</span>&gt;</span>Style Guide<span class="tag">&lt;/<span class="title">a</span>&gt;</span>.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">main</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">data-main</span>=<span class="value">"scripts/main"</span> <span class="attribute">src</span>=<span class="value">"./scripts/require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+    <span class="built_in">require</span>([<span class="string">'ajax-loader-html'</span>,<span class="string">'menu-toggle'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">ajaxLoader</span>)</span>{
+        <span class="keyword">var</span> a = <span class="built_in">document</span>.querySelectorAll(<span class="string">'#menu a'</span>);
+        <span class="keyword">var</span> view = <span class="built_in">document</span>.getElementById(<span class="string">'view'</span>);
+        ajaxLoader.bindEvents(a,view);
+    })
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>经过资源替换和压缩后的线上代码如下</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">chartset</span>=<span class="value">utf-8</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">X-UA-Compatiable</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">viewport</span> <span class="attribute">content</span>=<span class="value">"width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">title</span> <span class="attribute">content</span>=<span class="value">"simple app"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">keyword</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">description</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">manifest</span> <span class="attribute">href</span>=<span class="value">manifest.json</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">mobile-web-app-capable</span> <span class="attribute">content</span>=<span class="value">yes</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">application-name</span> <span class="attribute">content</span>=<span class="value">"simple app"</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">icon</span> <span class="attribute">sizes</span>=<span class="value">192x192</span> <span class="attribute">href</span>=<span class="value">images</span>/<span class="attribute">touch</span>/<span class="attribute">chrome-touch-icon-192x192.png</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">apple-mobile-web-app-capable</span> <span class="attribute">content</span>=<span class="value">yes</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">apple-mobile-web-app-status-bar-style</span> <span class="attribute">content</span>=<span class="value">white</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">apple-mobile-web-app-title</span> <span class="attribute">content</span>=<span class="value">"simple app"</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">apple-touch-icon</span> <span class="attribute">href</span>=<span class="value">images</span>/<span class="attribute">touch</span>/<span class="attribute">apple-touch-icon.png</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">msapplication-TileImage</span> <span class="attribute">content</span>=<span class="value">images</span>/<span class="attribute">touch</span>/<span class="attribute">ms-touch-icon-144</span>*<span class="attribute">144-precomposed.png</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">msapplication-TileColor</span> <span class="attribute">content</span>=<span class="value">#fff</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">theme-color</span> <span class="attribute">content</span>=<span class="value">#fff</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">stylesheet</span> <span class="attribute">type</span>=<span class="value">text</span>/<span class="attribute">css</span> <span class="attribute">href</span>=<span class="value">styles</span>/<span class="attribute">main.css</span>&gt;</span><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">text</span>/<span class="attribute">javascript</span>&gt;</span><span class="openscad"><span class="built_in">!</span><span class="function"><span class="keyword">function</span><span class="params">()</span>{</span><span class="string">"use strict"</span>;<span class="function"><span class="keyword">function</span> <span class="title">e</span><span class="params">()</span>{</span>t=document.documentElement.clientWidth,t&gt;<span class="number">640</span>&amp;&amp;<span class="params">(t=<span class="number">640</span>)</span>,<span class="number">320</span>&gt;t&amp;&amp;<span class="params">(t=<span class="number">320</span>)</span>,n=<span class="params">(<span class="number">62.5</span>*t/i)</span>.toFixed<span class="params">(<span class="number">2</span>)</span>,document.documentElement.style.fontSize=n+<span class="string">"%"</span>}var t,n,i;i=<span class="number">375</span>,e<span class="params">()</span>,window.addEventListener<span class="params">(<span class="string">"resize"</span>,e,!<span class="number">1</span>)</span>}<span class="params">()</span>;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">body</span>&gt;</span><span class="tag">&lt;<span class="title">header</span> <span class="attribute">class</span>=<span class="value">"app-bar promote-layer"</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">app-bar-container</span>&gt;</span><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">menu</span>&gt;</span><span class="tag">&lt;<span class="title">svg</span> <span class="attribute">xmlns</span>=<span class="value">http:</span>//<span class="attribute">www.w3.org</span>/<span class="attribute">2000</span>/<span class="attribute">svg</span> <span class="attribute">viewbox</span>=<span class="value">"0 0 24 24"</span>&gt;</span><span class="tag">&lt;<span class="title">path</span> <span class="attribute">d</span>=<span class="value">"M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"</span>&gt;</span><span class="tag">&lt;/<span class="title">path</span>&gt;</span><span class="tag">&lt;/<span class="title">svg</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">logo</span>&gt;</span>Web <span class="tag">&lt;<span class="title">strong</span>&gt;</span>Starter Kit<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">app-bar-actions</span>&gt;</span><span class="tag">&lt;<span class="title">button</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon icon-star"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;/<span class="title">section</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">header</span>&gt;</span><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">"navdrawer-container promote-layer"</span>&gt;</span><span class="tag">&lt;<span class="title">h4</span>&gt;</span>Navigation<span class="tag">&lt;/<span class="title">h4</span>&gt;</span><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">menu</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">#hello</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">#get-started</span>&gt;</span>Get Started<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">#styleguide</span>&gt;</span>Style Guide<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">ul</span>&gt;</span><span class="tag">&lt;/<span class="title">nav</span>&gt;</span><span class="tag">&lt;<span class="title">main</span> <span class="attribute">id</span>=<span class="value">view</span>&gt;</span><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">id</span>=<span class="value">hello</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>Welcome to Web Starter Kit.<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">h2</span> <span class="attribute">id</span>=<span class="value">get-started</span>&gt;</span>Get Started.<span class="tag">&lt;/<span class="title">h2</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>Read how to <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">https:</span>//<span class="attribute">developers.google.com</span>/<span class="attribute">web</span>/<span class="attribute">starter-kit</span>&gt;</span>Get Started<span class="tag">&lt;/<span class="title">a</span>&gt;</span> or check out the <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">styleguide.html</span>&gt;</span>Style Guide<span class="tag">&lt;/<span class="title">a</span>&gt;</span>.<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">main</span>&gt;</span><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">text</span>/<span class="attribute">javascript</span> <span class="attribute">data-main</span>=<span class="value">scripts</span>/<span class="attribute">main</span> <span class="attribute">src</span>=<span class="value">.</span>/<span class="attribute">scripts</span>/<span class="attribute">require.js</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">text</span>/<span class="attribute">javascript</span>&gt;</span><span class="javascript">
+    <span class="built_in">require</span>([<span class="string">'ajax-loader-html'</span>,<span class="string">'menu-toggle'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">ajaxLoader</span>)</span>{
+        <span class="keyword">var</span> a = <span class="built_in">document</span>.querySelectorAll(<span class="string">'#menu a'</span>);
+        <span class="keyword">var</span> view = <span class="built_in">document</span>.getElementById(<span class="string">'view'</span>);
+        ajaxLoader.bindEvents(a,view);
+    })
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;/<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2016/02/23/gulp-inline-source-gulp-replace/" data-id="cikytcva4000nr5w2vdo8769i" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/TedWei" target="_blank"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/05/buildWithGulp/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">buildWithGulp</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/02/23/gulp-inline-source-gulp-replace/" class="title">gulp-inline-source &amp;&amp; gulp-file-include</a></p>
+              <p class="item-date"><time datetime="2016-02-23T01:51:24.000Z" itemprop="datePublished">2016-02-23</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/08/05/buildWithGulp/" class="title">buildWithGulp</a></p>
+              <p class="item-date"><time datetime="2015-08-05T07:51:42.000Z" itemprop="datePublished">2015-08-05</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/07/27/howbrowserswork/" class="title">howbrowserswork</a></p>
+              <p class="item-date"><time datetime="2015-07-27T12:54:36.000Z" itemprop="datePublished">2015-07-27</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/07/16/CSS3-animation-about/" class="title">CSS3 动画相关</a></p>
+              <p class="item-date"><time datetime="2015-07-16T13:58:45.000Z" itemprop="datePublished">2015-07-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/07/09/High Performance Javascript/" class="title">高性能javascript</a></p>
+              <p class="item-date"><time datetime="2015-07-09T14:25:47.000Z" itemprop="datePublished">2015-07-09</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDN/">MDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SICP/">SICP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hanoi/">hanoi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lazyLoad/">lazyLoad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scheme/">scheme</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screen/">screen</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sicp/">sicp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/window/">window</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/MDN/" style="font-size: 10px;">MDN</a> <a href="/tags/SICP/" style="font-size: 10px;">SICP</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hanoi/" style="font-size: 10px;">hanoi</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/lazyLoad/" style="font-size: 10px;">lazyLoad</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/scheme/" style="font-size: 16.67px;">scheme</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/sicp/" style="font-size: 13.33px;">sicp</a> <a href="/tags/window/" style="font-size: 10px;">window</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2016 Ted Wei</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
