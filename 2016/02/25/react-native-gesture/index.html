@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: screen | wei&#39;s blog</title>
+  <title>react native gesture | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/screen/index.html">
+  <meta name="description" content="在使用react native 的手势捕捉时候，比如想在手势View里面使用原有的scrollView，要注意的是onStartShouldSetPanResponder和onMoveShouldSetPanResponderonStartShouldSetPanResponder 设置为true后 并不会触发 onMoveShouldSetPanResponder 。所以想对Move 例如滑动等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react native gesture">
+<meta property="og:url" content="http://tedwei.github.io/2016/02/25/react-native-gesture/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="在使用react native 的手势捕捉时候，比如想在手势View里面使用原有的scrollView，要注意的是onStartShouldSetPanResponder和onMoveShouldSetPanResponderonStartShouldSetPanResponder 设置为true后 并不会触发 onMoveShouldSetPanResponder 。所以想对Move 例如滑动等">
+<meta property="og:updated_time" content="2016-02-25T08:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="react native gesture">
+<meta name="twitter:description" content="在使用react native 的手势捕捉时候，比如想在手势View里面使用原有的scrollView，要注意的是onStartShouldSetPanResponder和onMoveShouldSetPanResponderonStartShouldSetPanResponder 设置为true后 并不会触发 onMoveShouldSetPanResponder 。所以想对Move 例如滑动等">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,58 +82,47 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>screen</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-react-native-gesture" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      react native gesture
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:37:51.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/DOM/" class="title">window.screen (MDN)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        原文链接为 https://developer.mozilla.org/en-US/docs/Web/API/Screen
-window.screen是跟设备界面相关的属性与方法
-有以下属性 
-availHeight可用的尺寸高度 单位为像素会去除掉不可用的部分高度 例如菜单栏
-availLeft距离屏幕左侧的距离 
-availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为23)
+      <p class="article-byline">
+        <a href="/2016/02/25/react-native-gesture/" class="article-date">
+  <time datetime="2016-02-25T08:40:23.000Z" itemprop="datePublished">2016-02-25</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>在使用react native 的手势捕捉时候，比如想在手势View里面<br>使用原有的scrollView，要注意的是<br>onStartShouldSetPanResponder和onMoveShouldSetPanResponder<br>onStartShouldSetPanResponder 设置为true后 并不会触发 onMoveShouldSetPanResponder 。<br>所以想对Move 例如滑动等做处理 应该将 onStartShouldSetPanResponder设置为false。并且将其设置为false后。onMoveShouldSetPanResponder 就会成为第一个触发的事件，而传参进来的gestureState 的x0,y0 会始终为0 应该对MoveX,MoveY和dx,dy 进行参数比较 进行处理。<br>例如我只想对在滑动初始点在边缘内的事件进行处理</p>
+<pre><code> <span class="keyword">if</span> <span class="params">( <span class="params">(<span class="params">(gestureState.moveX -gestureState.dx)</span> &lt; edge)</span> || <span class="params">(<span class="params">(gestureState.moveX - gestureState.dx)</span> &gt; screen.width-edge)</span>)</span>{
+     return <span class="literal">true</span>;
+ }
+return <span class="literal">false</span>;
+</code></pre>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2016/02/25/react-native-gesture/" data-id="cil214j6b0003fow2j1as4crr" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native/">react native</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -146,6 +136,19 @@ availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为2
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/23/gulp-inline-source-gulp-replace/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">gulp-inline-source &amp;&amp; gulp-file-include</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
