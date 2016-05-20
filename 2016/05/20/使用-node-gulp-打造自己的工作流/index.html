@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: screen | wei&#39;s blog</title>
+  <title>使用 node &amp; gulp 打造自己的工作流 | wei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wei's blog">
-<meta property="og:url" content="http://tedwei.github.io/tags/screen/index.html">
+  <meta name="description" content="现在gulp和Node是我工作中不可缺少的一部分，我依然还只是做着传统的前端工作。
+我使用gulp来压缩 autoprefixer等之前已经在用的功能。
+现在加上node。我开始写一些文件替换工作。比如我使用zepto作为基础组件,但是不太想使用使用整个包。那我在本地的时候会使用require 动态加载需要的组件。因为依赖相同。那么我就可以动态的转换成requirejs需要的格式来进行加载。
+在发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 node & gulp 打造自己的工作流">
+<meta property="og:url" content="http://tedwei.github.io/2016/05/20/使用-node-gulp-打造自己的工作流/index.html">
 <meta property="og:site_name" content="wei's blog">
-<meta property="og:description">
+<meta property="og:description" content="现在gulp和Node是我工作中不可缺少的一部分，我依然还只是做着传统的前端工作。
+我使用gulp来压缩 autoprefixer等之前已经在用的功能。
+现在加上node。我开始写一些文件替换工作。比如我使用zepto作为基础组件,但是不太想使用使用整个包。那我在本地的时候会使用require 动态加载需要的组件。因为依赖相同。那么我就可以动态的转换成requirejs需要的格式来进行加载。
+在发">
+<meta property="og:updated_time" content="2016-05-20T10:57:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wei's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="使用 node & gulp 打造自己的工作流">
+<meta name="twitter:description" content="现在gulp和Node是我工作中不可缺少的一部分，我依然还只是做着传统的前端工作。
+我使用gulp来压缩 autoprefixer等之前已经在用的功能。
+现在加上node。我开始写一些文件替换工作。比如我使用zepto作为基础组件,但是不太想使用使用整个包。那我在本地的时候会使用require 动态加载需要的组件。因为依赖相同。那么我就可以动态的转换成requirejs需要的格式来进行加载。
+在发">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,58 +91,49 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-tag"></i>标签：<em>screen</em></h1>
+              <h1 class="header">未分类</h1>
             </div>
             <div class="main-body-content">
               
+  <article id="post-使用-node-gulp-打造自己的工作流" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
+    <h1 class="article-title" itemprop="name">
+      使用 node &amp; gulp 打造自己的工作流
+    </h1>
   
-    
-    
+
+        </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-07-04T04:37:51.000Z" itemprop="datePublished">2015-07-04</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/07/04/DOM/" class="title">window.screen (MDN)</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        原文链接为 https://developer.mozilla.org/en-US/docs/Web/API/Screen
-window.screen是跟设备界面相关的属性与方法
-有以下属性 
-availHeight可用的尺寸高度 单位为像素会去除掉不可用的部分高度 例如菜单栏
-availLeft距离屏幕左侧的距离 
-availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为23)
+      <p class="article-byline">
+        <a href="/2016/05/20/使用-node-gulp-打造自己的工作流/" class="article-date">
+  <time datetime="2016-05-20T10:40:59.000Z" itemprop="datePublished">2016-05-20</time>
+</a>
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>现在gulp和Node是我工作中不可缺少的一部分，我依然还只是做着传统的前端工作。</p>
+<p>我使用gulp来压缩 autoprefixer等之前已经在用的功能。</p>
+<p>现在加上node。我开始写一些文件替换工作。<br>比如我使用zepto作为基础组件,但是不太想使用使用整个包。那我在本地的时候会使用require 动态加载需要的组件。因为依赖相同。那么我就可以动态的转换成requirejs需要的格式来进行加载。</p>
+<p>在发布的时候 我又需要将这些动态加载的部分组件进行合并。那我又可以进行合并后 在转换成requirejs需要的格式</p>
+<p>我们使用jenkins进行应用发布。我构建了一个简易的build.js 填入你的jenkins地址，job的名字 你的帐号 密码。然后node build.js 就可以发布了</p>
+<p>在本地调试或者mock的时候 我需要将url指向本机地址或者mock，但是上线又不太需要。 我将这部分提取出来，动态的根据我的gulp task进行文件替换。</p>
+<p>我们使用svn来进行代码管理。我就每次将gulp prod后的文件 拷贝到对应的本机svn地址。然后执行 svn_autocommit.sh 。会自动添加，删除 进行commit。在根据commit的输出判断是否进行jenkins的build。</p>
+<p>这样每次开发应用。我只需要 gulp dev 开启本地的实时预览开发环境。<br>gulp prod &amp;&amp; gulp prod:build 进行代码编译，发布，应用构建。</p>
+<p>还有很多可以自动化的工作，自动的测试，UI测试，单元测试等。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://tedwei.github.io/2016/05/20/使用-node-gulp-打造自己的工作流/" data-id="ciofm3s700003mnw2bmnke746" class="article-share-link">分享到</a>
+        
+        
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-  
-
 
             </div>
           </section>
@@ -146,6 +147,19 @@ availTop距离屏幕顶部为(MAC下浏览器全屏化之后  则为0 一般为2
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/25/react-native-gesture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">react native gesture</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
